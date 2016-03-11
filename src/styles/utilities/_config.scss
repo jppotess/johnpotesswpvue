@@ -1,6 +1,49 @@
 // ==========================================================
 // Global Config
 // ==========================================================
-
+// 
 //Font Stacks
+
+$font-url--google: "http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900";
+
+$font-family--base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family--heading: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Font Weights
+
+// Descriptive Base Colors
+
+$white: #fff;
+$gray: #999999;
+$black: #1b1b1b;
+$black--light: #333;
+
+$pink--dark: #F04175;
+$pink--light: #FFAACE;
+$green: #B5B436;
+
+
+// Color Usage
+
+$color--primary: $pink--dark;
+$color--secondary: $green;
+$color--accent: $pink--light;
+
+// Color Palette Modifiers
+
+$palette: (
+  gray: (
+    xx-light: lighten($gray, 43%),
+    x-light: lighten($gray, 35%), 
+    light: lighten($gray, 12%), 
+    base: $gray, 
+    dark: darken($gray, 8%), 
+    x-dark: darken($gray, 16%)
+    )
+  );
+
+// Text Color
+
+$p-text: $black--light;
+$h-text: $black;
 

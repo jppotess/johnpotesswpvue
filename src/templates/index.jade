@@ -5,6 +5,17 @@ html
     meta(charset="utf-8")
     link(rel="stylesheet", href="css/styles.min.css")
   body
-    h1 Welcome to a World of Magic and Adventure
+    h1 Blog Index
+
+    .posts__wrapper
+      .posts#blogListing
+        .post( v-for="post in pulledPosts")
+          h2 {{ post.title }}
+          span.post__meta__date {{ post.date }}
+          span.post__meta__author {{ post.author }}
+          span.post__meta__permalink {{ post.permalink }}
+          span.post__meta__ID {{ post.postId }}
+          article.post__content {{ post.content}}
+
     script(src="vendor/vue.js")    
     script(src="js/scripts.min.js")

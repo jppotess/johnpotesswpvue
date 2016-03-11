@@ -113,7 +113,7 @@ gulp.task("babel", function() {
 //Library
 gulp.task('vendor', function() {
     return gulp.src("src/vendor/**/*.*")
-    .pipe(gulp.dest("app/"));
+    .pipe(gulp.dest("app/vendor"));
 })
 
 // Clean Task
