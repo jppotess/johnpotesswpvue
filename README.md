@@ -1,2 +1,2 @@
-# JP WP Rest API Vue
+# JP WP REST API Vue
 
