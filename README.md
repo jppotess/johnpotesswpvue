@@ -1,2 +1,2 @@
-# Web Audio Equalizer
+# JP WP Rest API Vue
 
