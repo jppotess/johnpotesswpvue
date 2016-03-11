@@ -5,17 +5,22 @@ html
     meta(charset="utf-8")
     link(rel="stylesheet", href="css/styles.min.css")
   body
-    h1 Blog Index
+    .main__wrapper
+      .main
+        h1 Blog Index
 
-    .posts__wrapper
-      .posts#blogListing
-        .post( v-for="post in pulledPosts")
-          h2 {{ post.title }}
-          span.post__meta__date {{ post.date }}
-          span.post__meta__author {{ post.author }}
-          span.post__meta__permalink {{ post.permalink }}
-          span.post__meta__ID {{ post.postId }}
-          article.post__content {{ post.content}}
+        .posts__wrapper
+          .posts#blogListing
+            .post( v-for="post in pulledPosts")
+              h2 {{ post.title }}
+              span.post__meta__date {{ post.date }} <br/>
+              span.post__meta__author {{ post.author }} <br/>
+              span.post__meta__permalink {{ post.permalink }} <br/>
+              span.post__meta__ID {{ post.postId }} <br/>
+              article.post__content {{ post.content}} <br/>
+              .post__sweetPost__sweets-button
+                  button( v-on:click="sweetThis($data)") Sweet This Post
+              .post__sweetPost__sweets {{ post.sweets}}
 
     script(src="vendor/vue.js")    
     script(src="js/scripts.min.js")

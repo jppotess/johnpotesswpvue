@@ -1,0 +1,11 @@
+// Main 
+
+
+.main {
+  @include pad(2em 2em);
+
+
+  &__wrapper {
+    @include outer-container;
+  }
+}

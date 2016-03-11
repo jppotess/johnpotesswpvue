@@ -1,0 +1,14 @@
+// buttons
+
+button,
+.button {
+    background-color: $color--secondary;
+    transition: $transition;
+    padding: .5em 1em;
+    border-radius: .2em;
+    text-transform: uppercase;
+
+  &:hover {
+    background-color: lighten($color--secondary, 10%);
+  }
+}

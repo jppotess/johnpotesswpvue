@@ -18,16 +18,16 @@ $gray: #999999;
 $black: #1b1b1b;
 $black--light: #333;
 
-$pink--dark: #F04175;
-$pink--light: #FFAACE;
-$green: #B5B436;
+$sea-foam: #00A388;
+$peace-green: #79BD8F;
+$orangy: #FF6138;
 
 
 // Color Usage
 
-$color--primary: $pink--dark;
-$color--secondary: $green;
-$color--accent: $pink--light;
+$color--primary: $sea-foam;
+$color--secondary: $peace-green;
+$color--accent: $orangy;
 
 // Color Palette Modifiers
 
@@ -46,4 +46,6 @@ $palette: (
 
 $p-text: $black--light;
 $h-text: $black;
+
+$transition: .3s all ease;
 
