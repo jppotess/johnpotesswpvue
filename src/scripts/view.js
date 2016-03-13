@@ -1,4 +1,34 @@
-window.Vue = Vue;
+(function() {
+  var httpRequest;
+
+  // Make the request to the WordPress API endpoint
+  function makeRequest() {
+    httpRequest = new XMLHttpRequest();
+
+    if (!httpRequest) {
+      console.log("Can't make XMLHTTP instance");
+      return false;
+    }
+
+    httpRequest.onreadystatechange = logContents;
+    httpRequest.open('GET', 'http://wpblog.johnpotess.com/wp-json/wp/v2/posts');
+    httpRequest.send();
+  }
+
+  function logContents() {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+      if (httpRequest.status === 200) {
+        console.log(httpRequest.responseText);
+      } else {
+        console.log('There was an error with the request.');
+      }
+    }
+  }
+
+})();
+
+
+
 
 var dummyPosts = [
       {
@@ -48,17 +78,21 @@ var dummyPosts = [
       }  
     ]
 
-new Vue ({
+
+window.Vue = Vue;
+var vm = new Vue ({
   el: '#blogListing',
   data: {
     pulledPosts: dummyPosts
   },
   methods: {
     sweetThis: function (data) {
-      this.pulledPosts[0] += 1;
-      // console.log(event);
-      // console.log(data);
-      console.log(this.pulledPosts[0]);
+      var value = 8;
+
+      // this.$set('pulledPosts.sweets', value);
+      this.pulledPosts.push(value);
+
+      console.log(this.pulledPosts);
     }
   }
 })
