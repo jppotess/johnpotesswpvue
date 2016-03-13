@@ -1,8 +1,9 @@
-(function() {
+var makeRequest;
+
   var httpRequest;
 
   // Make the request to the WordPress API endpoint
-  function makeRequest() {
+  makeRequest = function() {
     httpRequest = new XMLHttpRequest();
 
     if (!httpRequest) {
@@ -10,23 +11,21 @@
       return false;
     }
 
-    httpRequest.onreadystatechange = logContents;
+    httpRequest.onreadystatechange = handleResponse;
     httpRequest.open('GET', 'http://wpblog.johnpotess.com/wp-json/wp/v2/posts');
     httpRequest.send();
   }
 
-  function logContents() {
+  function handleResponse() {
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
       if (httpRequest.status === 200) {
-        console.log(httpRequest.responseText);
+        return httpRequest.responseText;
+        console.log(realPosts);
       } else {
-        console.log('There was an error with the request.');
+        console.log('Error: ' + handleResponse.status);
       }
     }
   }
-
-})();
-
 
 
 
@@ -83,7 +82,7 @@ window.Vue = Vue;
 var vm = new Vue ({
   el: '#blogListing',
   data: {
-    pulledPosts: dummyPosts
+    pulledPosts: makeRequest()
   },
   methods: {
     sweetThis: function (data) {

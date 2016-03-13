@@ -3,8 +3,8 @@ html
   head
 
     meta(charset="utf-8")
-    link(rel="stylesheet", href="css/styles.min.css")
-  body
+    link(rel="stylesheet", href="css/styles.min.css")   
+  body( onload="makeRequest();")
     .main__wrapper
       .main
         h1 Blog Index
@@ -22,5 +22,6 @@ html
                   button( v-on:click="sweetThis($data)") Sweet This Post
               .post__sweetPost__sweets {{ post.sweets}}
 
+
     script(src="vendor/vue.js")    
-    script(src="js/scripts.min.js")
+    script(src="js/scripts.min.js") 
