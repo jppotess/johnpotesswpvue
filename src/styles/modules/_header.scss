@@ -1,0 +1,10 @@
+// Header Styles
+
+.header {
+  @include outer-container;
+  @include clearfix;
+
+  &__wrapper {
+    width: 100%;
+  }
+}
