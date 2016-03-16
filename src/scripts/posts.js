@@ -1,12 +1,11 @@
 window.Vue = Vue;
-var vm = new Vue ({
+var vmPosts = new Vue ({
   el: '#blogListing',
   data: {
     posts: []
   },
   ready: function(){
     this.loadPosts();
-    for each
   },
   methods: {
     loadPosts: function() {
