@@ -1,2 +1,6 @@
-# JP WP REST API Vue
+# Vuepress
+
+## Headless WordPress CMS implementation with Vue.js
+
+
 
