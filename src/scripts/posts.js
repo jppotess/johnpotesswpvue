@@ -12,6 +12,7 @@ var vmPosts = new Vue ({
       this.$http.get('http://wpblog.johnpotess.com/wp-json/wp/v2/posts', function(data, status, request){
         if(status === 200) {
           this.posts = data;
+          console.log(this.posts);
         }
       });
     }

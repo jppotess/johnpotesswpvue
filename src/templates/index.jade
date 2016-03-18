@@ -7,18 +7,13 @@ html
   body
     .header__wrapper
       .header
-        nav.navigation__wrapper
-          .navigation
-            ul.menu
-              li Item 1
-              li Item 2
-              li Item 3
-              li Item 4
-              li Item 5
+        .primary-navigation__wrapper
+          nav.primary-navigation
+            ul
+              li( v-for="item in primaryMenuItems.items") {{ item.title }}
     .main__wrapper
       .main
         h1 Blog Index
-        button( v-on="click: loadPosts()") Load Posts
 
         .posts__wrapper
           .posts#blogListing
@@ -30,8 +25,8 @@ html
               span.post__meta__ID {{ post.id }} <br/>
               article.post__content {{ post.content.rendered}} <br/>
               .post__sweetPost__sweets-button
-                  button( v-on:click="sweetThis($data)") Sweet This Post
-              .post__sweetPost__sweets {{ post.sweets}}
+                  button( v-on:click="sweetThis($data)") Sweet Post Bro
+              .post__sweetPost__sweets {{ post.acf.sweets}}
 
 
 
