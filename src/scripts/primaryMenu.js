@@ -1,3 +1,5 @@
+// http://wpblog.johnpotess.com/wp-json/wp-api-menus/v2/menus/2
+
 window.Vue = Vue;
 var vmPrimaryMenu = new Vue ({
   el: 'nav.primary-navigation',

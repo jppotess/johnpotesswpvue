@@ -11,22 +11,27 @@ html
           nav.primary-navigation
             ul
               li( v-for="item in primaryMenuItems.items") {{ item.title }}
+                a( href="/{{ item.title }}/") 
     .main__wrapper
       .main
-        h1 Blog Index
+        #example
+          my-component
 
-        .posts__wrapper
-          .posts#blogListing
-            .post( v-for="post in posts")
-              h2 {{ post.title.rendered }}
-              span.post__meta__date {{ post.date_gmt }} <br/>
-              span.post__meta__author {{ post.author }} <br/>
-              span.post__meta__permalink {{ post.link }} <br/>
-              span.post__meta__ID {{ post.id }} <br/>
-              article.post__content {{ post.content.rendered}} <br/>
-              .post__sweetPost__sweets-button
-                  button( v-on:click="sweetThis($data)") Sweet Post Bro
-              .post__sweetPost__sweets {{ post.acf.sweets}}
+
+
+        h1 Blog Index
+          .posts__wrapper
+            .posts#blogListing
+              .post( v-for="post in posts")
+                h2 {{ post.title.rendered }}
+                span.post__meta__date {{ post.date_gmt }} <br/>
+                span.post__meta__author {{ post.author }} <br/>
+                span.post__meta__permalink {{ post.link }} <br/>
+                span.post__meta__ID {{ post.id }} <br/>
+                article.post__content {{ post.content.rendered}} <br/>
+                .post__sweetPost__sweets-button
+                    button( v-on:click="sweetThis($data)") Sweet Post Bro
+                .post__sweetPost__sweets {{ post.acf.sweets}}
 
 
 
