@@ -1,6 +1,4 @@
-# Vuepress
-
-## Headless WordPress CMS implementation with Vue.js
+# Headless WordPress CMS implementation with Vue.js
 
 ## Using the following plugins in WordPress
 
