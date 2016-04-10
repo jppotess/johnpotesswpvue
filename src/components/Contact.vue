@@ -22,7 +22,6 @@
       loadContent: function() {
         this.$http.get('http://wpblog.johnpotess.com/wp-json/wp/v2/pages/10').then(function(response){
             this.content = response.data;
-            console.log(response.data);
         });
       }
     }

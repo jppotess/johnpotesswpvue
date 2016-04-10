@@ -1,4 +1,6 @@
 // src/index.js
+// Vue.config.debug = true;
+
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
