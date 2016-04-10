@@ -3,7 +3,7 @@
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: __dirname + '/build/',
+    path: './build/',
     publicPath: 'build/',
     filename: 'build.js'
   },
@@ -12,7 +12,13 @@ module.exports = {
     // noParse: /es6-promise\.js$/,
     loaders: [
       { test: /\.vue$/, loader: 'vue' },
-      { test: /\.js$/, loader: 'babel', exclude: /node_modules/ }
+      {
+        test: /\.js$/,
+        // excluding some local linked packages.
+        // for normal use cases only node_modules is needed.
+        exclude: /node_modules|vue\/dist|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
+        loader: 'babel'
+      }
     ]
   },
   babel: {

@@ -1,8 +1,9 @@
 <!-- src/components/Home.vue -->
 
 <template>
-  <div class="container">
-    <h1>Hello There</h1>
+  <div>
+    <h1>Home</h1>
+    <h2>{{ msg }}</h2>
   </div>
 </template>
 
@@ -10,7 +11,7 @@
   export default {
     data() {
       return {
-        menuItems: ''
+        msg: 'Hello Wellos'
       }
     }
   }
