@@ -1,8 +1,9 @@
 <!-- src/components/Home.vue -->
 
 <template>
-  <div class="container">
-    <h1>Helfsdlo There</h1>
+  <div>
+    <h1>About</h1>
+    <p>{{ msg }}</p>
   </div>
 </template>
 
@@ -10,25 +11,8 @@
   export default {
     data() {
       return {
-        menuItems: ''
+        msg: 'You\'re viewing the about page'
       }
     }
-  }
+  } 
 </script>
-<!-- 
-  data: {
-    primaryMenuItems: []
-  },
-  ready: function(){
-    this.loadPrimaryMenu();
-  },
-  methods: {
-    loadPrimaryMenu: function() {
-      this.$http.get('http://wpblog.johnpotess.com/wp-json/wp-api-menus/v2/menus/2', function(data, status, request){
-        if(status === 200) {
-          this.primaryMenuItems = data;
-          console.log(this.primaryMenu);
-        }
-      });
-    }
-  } -->

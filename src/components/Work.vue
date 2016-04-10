@@ -1,8 +1,8 @@
 <!-- src/components/Home.vue -->
 
 <template>
-  <div class="container">
-    <h1>Hello There</h1>
+  <div>
+    <h1>Work</h1>
   </div>
 </template>
 
@@ -13,13 +13,20 @@
         menuItems: ''
       }
     },
+    data: {
+      primaryMenuItems: []
+    },
+    ready: function(){
+      this.loadPrimaryMenu();
+    },
     methods: {
-      getQuote() {
-        this.$http
-          .get('http://wpblog.johnpotess.com/wp-json/wp-api-menus/v2/menus/2', (data) => 
-            this.menuItems = data;
-          )
-          .error((err) => console.log(err))
+      loadPrimaryMenu: function() {
+        this.$http.get('http://wpblog.johnpotess.com/wp-json/wp-api-menus/v2/menus/2', function(data, status, request){
+          if(status === 200) {
+            this.primaryMenuItems = data;
+            console.log(this.primaryMenu);
+          }
+        });
       }
     }
   }
