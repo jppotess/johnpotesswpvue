@@ -8,7 +8,7 @@ import Home from './components/Home.vue';
 // import BlogIndex from './components/BlogIndex.vue'
 // import BlogSingle from './components/BlogSingle.vue'
 import About from './components/About.vue';
-import Work from './components/Work.vue'
+import Projects from './components/Projects.vue'
 import Contact from './components/Contact.vue'
 
 Vue.use(VueResource);
@@ -24,8 +24,8 @@ router.map({
   '/about': {
     component: About
   },
-  '/work': {
-    component: Work
+  '/projects': {
+    component: Projects
   },
   '/contact': {
     component: Contact

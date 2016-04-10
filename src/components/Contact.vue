@@ -1,51 +1,32 @@
 <!-- src/components/Home.vue -->
 
 <template>
-  <div class="container">
-    <h1>Contact</h1>
-    <p>You're viewing the contact page</p>
-  </div>
+    <h1>{{ content.title.rendered }}</h1>
+    {{{ content.content.rendered }}}
 </template>
 
 <script>
   export default {
     data() {
       return {
-        menuItems: ''
+        content: []
       }
     },
-    data: {
-      primaryMenuItems: []
-    },
+
+
     ready: function(){
-      this.loadPrimaryMenu();
+      this.loadContent();
     },
+
     methods: {
-      loadPrimaryMenu: function() {
-        this.$http.get('http://wpblog.johnpotess.com/wp-json/wp-api-menus/v2/menus/2', function(data, status, request){
-          if(status === 200) {
-            this.primaryMenuItems = data;
-            console.log(this.primaryMenu);
-          }
+      loadContent: function() {
+        this.$http.get('http://wpblog.johnpotess.com/wp-json/wp/v2/pages/10').then(function(response){
+            this.content = response.data;
+            console.log(response.data);
         });
       }
     }
-  }
+
+  } 
 </script>
-<!-- 
-  data: {
-    primaryMenuItems: []
-  },
-  ready: function(){
-    this.loadPrimaryMenu();
-  },
-  methods: {
-    loadPrimaryMenu: function() {
-      this.$http.get('http://wpblog.johnpotess.com/wp-json/wp-api-menus/v2/menus/2', function(data, status, request){
-        if(status === 200) {
-          this.primaryMenuItems = data;
-          console.log(this.primaryMenu);
-        }
-      });
-    }
-  } -->
+

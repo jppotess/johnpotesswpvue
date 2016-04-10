@@ -20,7 +20,7 @@
 
     methods: {
       loadContent: function() {
-        this.$http.get('http://wpblog.johnpotess.com/wp-json/wp/v2/pages/15').then(function(response){
+        this.$http.get('http://wpblog.johnpotess.com/wp-json/wp/v2/pages/12').then(function(response){
             this.content = response.data;
             console.log(response.data);
         });
